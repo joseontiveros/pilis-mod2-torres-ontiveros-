@@ -1,8 +1,5 @@
 window.addEventListener('load', ()=> {
 
-    let lon;
-    let lat;
-
 let temperaturaValor = document.getElementById('temperatura-valor');
 let temperaturaDescripcion = document.getElementById('temperatura-descripcion');
 
@@ -14,38 +11,28 @@ let vientoVelocidad = document.getElementById('viento-velocidad');
 
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(posicion => {
-            //console.log(posicion.coords.latitude)
-            lon = posicion.coords.longitude;
-            lat = posicion.coords.latitude;
-
-            // Capturando la ubicacion actual  
-            const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&lang=es&units=metric&appid=7e6fa103b201047e0873faf953ba25b6`
-
-            //console.log(url)
+            
+            //coordenadas ciudad cultural
+            lon = -65.3309438515912;
+            lat = -24.18324151358606;
+            const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&lang=es&units=metric&appid=7e6fa103b201047e0873faf953ba25b6`            
             fetch(url)
                 .then(response => { return response.json() })
                 .then ( data => {
+                    //temperatura
                     let temp = Math.round(data.main.temp);
                     temperaturaValor.textContent = `${temp} ºC`;
-
+                    //descripcion temperatura
                     let desc = data.weather[0].description;
                     temperaturaDescripcion.textContent = desc.toUpperCase();
-                    
+                    //ubicacion                    
                     ubicacion.textContent = data.name;
-
-                    
+                    //viento                    
                     vientoVelocidad.textContent = `${data.wind.speed} m/s`;
-
-                    
-
-                    //Para iconos estaticos
-                    // let iconCode = data.weather[0].icon
-                    // const urlIcon = `http://openweathermap.org/img/wn/${iconCode}.png`     
-                    // console.log(urlIcon)
-
-                    //iconos animados
-                    console.log(data.weather[0].main);
-                    
+                    console.log(data)
+                    //iconos animados clima
+                    console.log(data.weather[0].main);      
+                    //asignacion del icono segun descripcion              
                     switch (data.weather[0].main) {
                         case 'Thunderstorm':
                           iconoAnimado.src='/assets/iconosAnimadosClima/thunder.svg'
@@ -79,27 +66,10 @@ let vientoVelocidad = document.getElementById('viento-velocidad');
                           iconoAnimado.src='/assets/iconosAnimadosClima/cloudy-day-1.svg'
                           console.log('por defecto');
                       }
-
-
-
-
-
-
-
-
-                     
-
-
-
-
-
-
                 })
                 .catch(error => {
                     console.log(error)
                 })
-
         })
     }
-
 })
