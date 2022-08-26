@@ -1,8 +1,7 @@
 
 body {
     margin: 0;
-    padding: 0;
-    background-color: ;
+    padding: 0;    
     box-sizing: border-box;
 
     
@@ -102,5 +101,26 @@ header {
     background-color: #386641;
     color: #BC4749;
 }
+
+/*FOOTER*/
+footer {
+    width: 100%;
+    padding-top: 25px;
+    background: #BC4749;
+
+}
+footer .wp {
+    display: flex;
+    flex-direction: row;
+    padding: 5px 0px 20px 0px;
+    justify-content: center;
+    transition: all .5s;
+    
+} 
+footer .wp:hover {
+    transform: scale(1.2, 1.2);
+}
+
+
 
 
