@@ -1,3 +1,106 @@
-body{
-    background-color: aqua;
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: ;
+    box-sizing: border-box;
+
+    
 }
+
+/*NAVBAR*/
+.navbar {
+    position: fixed;
+    width: 100%;
+    background-color: #386641;
+    z-index: 1;
+    text-transform: uppercase;
+}
+.barra {
+    list-style: none;
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+    color: bisque;
+    text-align: center;
+}
+.barraItem{
+    display: inline-block;
+    padding: 25px;
+    transition: 1s;
+}
+.barraItem a:hover {
+    background-color: #BC4749;
+    color: #F2E8CF;
+}
+.barraItem a {
+    padding: 15px;
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 15px;
+    letter-spacing: 2px;
+    transition: all 1s;     
+}
+.logo {
+    text-decoration: none;
+    position: fixed;
+    float: left;
+    margin: 16px 36px;
+    color: aquamarine;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+/*EL EVENTO*/
+
+.eventoImg {
+    float: left;
+    width: 50%;
+}
+.eventoImg img {
+    width: 90%;
+}
+.eventoSubtitulo {
+    text-align: center;
+    
+    width: 100%;
+    padding: 0;
+}
+header {
+    height: 15vh;
+}
+.container {
+    margin: auto;
+    max-width: 1300px;
+    overflow: auto;
+    padding: 40px;
+}
+
+.eventoTitulo {
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+/*CLIMA */
+#contenedorTiempo {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    flex-direction: column;  
+        
+}
+#caja1{
+    background-color: #386641;
+    color: #BC4749;
+}
+#caja2{
+    background-color: #386641;
+    color: #BC4749;
+}
+#caja3{
+    background-color: #386641;
+    color: #BC4749;
+}
+
+
